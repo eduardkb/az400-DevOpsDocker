@@ -1,0 +1,29 @@
+# Use official Node LTS image
+FROM node:20
+
+# Set working directory
+WORKDIR /usr/src/app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy application code
+COPY . .
+
+# Expose the port your app uses
+EXPOSE 8090
+
+# Use the env variables from .env
+# (you can also pass them at runtime, safer for secrets)
+ENV PORT=8090
+ENV CORS_ORIGIN=http://localhost
+ENV MYSQLSERVER=localhost
+ENV MYSQLUSER=user
+ENV MYSQLPASSWORD=MyS&cretUs&rP@ss12
+ENV MYSQLDB=appdb
+
+# Start the app
+CMD ["node", "src/index.js"]
