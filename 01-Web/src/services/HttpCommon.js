@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const BACKENDSERVER='www.eduardkb.website';
+const BACKENDSERVER = "localhost:8090/api";
 
 export default axios.create({
-  baseURL: `https://${BACKENDSERVER}/api`,
+  baseURL: `http://${BACKENDSERVER}`,
   headers: {
-    "Content-type": "application/json"
-  }
+    "Content-type": "application/json",
+  },
 });

@@ -11,7 +11,7 @@ const app = express();
 app.use(express.static(path));
 
 const corsOptions = {
-  origin: "https://www.Beduardkb.website",
+  origin: "http://localhost:3000",
 };
 app.use(cors(corsOptions));
 

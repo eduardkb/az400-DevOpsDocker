@@ -1,4 +1,4 @@
-const MYSQLSERVER = "192.168.1.22";
+const MYSQLSERVER = "localhost";
 
 module.exports = {
   HOST: MYSQLSERVER,
