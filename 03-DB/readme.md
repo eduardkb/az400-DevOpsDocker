@@ -14,6 +14,7 @@ docker run -d -p 3306:3306 --name mysql-cont \
   -e MYSQL_DATABASE=$(grep MYSQL_DATABASE .env | cut -d '=' -f2) \
   -e MYSQL_USER=$(grep MYSQL_USER .env | cut -d '=' -f2) \
   -e MYSQL_PASSWORD=$(grep MYSQL_PASSWORD .env | cut -d '=' -f2) \
+  --restart unless-stopped \
   mysql-img
 ```
 
@@ -23,7 +24,7 @@ docker run -d -p 3306:3306 --name mysql-cont \
 docker exec -it mysql-cont bash
 
 # Login root
-mysql -u root
+mysql -u root -p
 
 # display tables
 show databases;
@@ -38,7 +39,7 @@ show tables;
 describe <table>
 ```
 
-## MANDATORY CONFIG: modify reactuser permission
+## CONFIG: modify reactuser permission (docker does this)
 
 Users cannot access database from outside the container.
 
@@ -54,7 +55,7 @@ GRANT ALL PRIVILEGES ON reactdb.* TO 'reactusr'@'%';
 FLUSH PRIVILEGES;
 ```
 
-## MANDTORY CONFIG: create reactdb
+## CONFIG: create reactdb (docker does this)
 
 ```sh
 create database reactdb;

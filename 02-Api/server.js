@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
@@ -10,8 +11,9 @@ const app = express();
 //TO RUN FE WITH EXPRESS
 app.use(express.static(path));
 
+const CORS_ORIGIN = process.env.CORS_ORIGIN || "http://localhost";
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: CORS_ORIGIN,
 };
 app.use(cors(corsOptions));
 
@@ -51,7 +53,7 @@ app.get("/", (req, res) => {
 require("./app/routes/turorial.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8090;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

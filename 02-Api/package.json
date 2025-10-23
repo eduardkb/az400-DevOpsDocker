@@ -26,6 +26,7 @@
   "homepage": "https://github.com/eduardkb/JS-TutorCrudApp-Node.Mysql.git#readme",
   "dependencies": {
     "cors": "*",
+    "dotenv": "^17.2.3",
     "express": "*",
     "mysql2": "*",
     "sequelize": "*"

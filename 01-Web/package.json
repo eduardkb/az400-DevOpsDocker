@@ -8,6 +8,7 @@
     "@testing-library/user-event": "*",
     "axios": "*",
     "bootstrap": "*",
+    "dotenv": "^17.2.3",
     "react": "*",
     "react-dom": "*",
     "react-router-dom": "*",

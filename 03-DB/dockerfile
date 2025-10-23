@@ -1,14 +1,17 @@
-# Use an official MySQL image as the base image
+# Use an official MySQL image
 FROM mysql:latest
 
-# Set environment variables for MySQL configuration
+# Set environment variables (optional, still useful)
 ENV MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
 ENV MYSQL_DATABASE=${MYSQL_DATABASE}
 ENV MYSQL_USER=${MYSQL_USER}
 ENV MYSQL_PASSWORD=${MYSQL_PASSWORD}
 
+# Copy initialization script
+COPY init.sql /docker-entrypoint-initdb.d/init.sql
+
 # Expose MySQL port
 EXPOSE 3306
 
-# Default command to run MySQL
+# Default command
 CMD ["mysqld"]
