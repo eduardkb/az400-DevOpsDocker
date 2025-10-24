@@ -8,7 +8,7 @@ ENV MYSQL_USER=${MYSQL_USER}
 ENV MYSQL_PASSWORD=${MYSQL_PASSWORD}
 
 # Copy initialization script
-COPY init.sql /docker-entrypoint-initdb.d/init.sql
+COPY init.sql /docker-entrypoint-initdb.d/
 
 # Expose MySQL port
 EXPOSE 3306

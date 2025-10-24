@@ -9,24 +9,21 @@ docker build -t mysql .
 ## Run container
 
 ```sh
-docker volume create mysql_data
-
-docker run -d `
-  -p 3306:3306 `
-  --name mysql `
-  --env-file .env `
-  -v mysql_data:/var/lib/mysql `
-  --restart unless-stopped `
+docker run -d \
+  -p 3306:3306 \
+  --name mysql \
+  --env-file .env \
+  --restart unless-stopped \
   mysql
 ```
 
 ## Interactively access container
 
 ```sh
-docker exec -it mysql-cont bash
+docker exec -it mysql bash
 
 # Login root
-mysql -u root -p
+mysql -u reactusr -p
 
 # display tables
 show databases;

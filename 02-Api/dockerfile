@@ -26,4 +26,4 @@ ENV MYSQLPASSWORD=MyS&cretUs&rP@ss12
 ENV MYSQLDB=appdb
 
 # Start the app
-CMD ["node", "src/index.js"]
+CMD ["node", "index.js"]
