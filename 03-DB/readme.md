@@ -6,7 +6,7 @@
 docker build -t mysql-img .
 ```
 
-## Run the container
+## Run container
 
 ```sh
 docker run -d \
