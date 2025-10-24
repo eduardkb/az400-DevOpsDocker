@@ -3,18 +3,21 @@
 ## Build docker container
 
 ```sh
-docker build -t mysql-img .
+docker build -t mysql .
 ```
 
 ## Run container
 
 ```sh
-docker run -d \
-  -p 3306:3306 \
-  --name mysql-cont \
-  --env-file .env \
-  --restart unless-stopped \
-  mysql-img
+docker volume create mysql_data
+
+docker run -d `
+  -p 3306:3306 `
+  --name mysql `
+  --env-file .env `
+  -v mysql_data:/var/lib/mysql `
+  --restart unless-stopped `
+  mysql
 ```
 
 ## Interactively access container

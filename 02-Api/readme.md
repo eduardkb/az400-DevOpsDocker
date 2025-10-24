@@ -3,16 +3,16 @@
 ## Build docker image
 
 ```sh
-docker build -t TrainingAppAPI:latest .
+docker build -t api .
 ```
 
 ## Run Docker Image
 
 ```sh
-docker run -d \
-  --name my-node-app \
-  --env-file .env \
-  -p 8090:8090 \
-  --restart unless-stopped \
-  my-node-app:latest
+docker run -d `
+  --name api `
+  --env-file .env `
+  -p 4000:4000 `
+  --restart unless-stopped `
+  api
 ```

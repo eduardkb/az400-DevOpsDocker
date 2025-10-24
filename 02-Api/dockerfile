@@ -8,17 +8,17 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --omit=dev
 
 # Copy application code
 COPY . .
 
 # Expose the port your app uses
-EXPOSE 8090
+EXPOSE 4000
 
 # Use the env variables from .env
 # (you can also pass them at runtime, safer for secrets)
-ENV PORT=8090
+ENV PORT=4000
 ENV CORS_ORIGIN=http://localhost
 ENV MYSQLSERVER=localhost
 ENV MYSQLUSER=user
